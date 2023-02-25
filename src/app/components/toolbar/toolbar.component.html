@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span></span>
+  <span class="title">Pixel Art</span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>grid_on</mat-icon>
+  </button>
+  <mat-menu #menu>
+    <button
+      *ngFor="let size of gridSizes"
+      (click)="selectGridSize.emit(size)"
+      mat-menu-item>
+      {{ size + 'x' + size }}
+    </button>
+  </mat-menu>
+</mat-toolbar>

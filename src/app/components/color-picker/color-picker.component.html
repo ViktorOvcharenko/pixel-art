@@ -1,0 +1,7 @@
+<button
+  *ngFor="let color of colors"
+  (click)="selectColor.emit(color)"
+  [style.background-color]="color"
+  mat-mini-fab
+></button>
+
