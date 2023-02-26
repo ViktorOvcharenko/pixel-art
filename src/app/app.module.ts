@@ -28,7 +28,7 @@ import { ColorPickerComponent } from './components/color-picker/color-picker.com
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,20 +10,14 @@ import { gridSizes } from "./constants/grid-sizes";
 export class AppComponent {
   public selectedGridSize = gridSizes[0];
 
-  downloadImage() {
-    const node: any = document.getElementById('test');
-
-    toJpeg(node)
-      .then(function (dataUrl) {
+  downloadImage(): void {
+    toJpeg(document.querySelector('.mat-grid-list') as HTMLElement).then((dataUrl) => {
         const link = document.createElement('a');
         link.href = dataUrl;
-        link.download = 'Download.jpeg';
+        link.download = 'download.jpeg';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-      })
-      .catch(function (error) {
-        console.error('oops, something went wrong!', error);
       });
   }
 }

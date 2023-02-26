@@ -1,10 +1,14 @@
 <mat-card>
-  <mat-grid-list [cols]="cols" id="test">
-    <mat-grid-tile *ngFor="let tile of grid; let i = index;" [matMenuTriggerFor]="colorPicker" [style.background]="tile">
-      <mat-menu #colorPicker="matMenu" yPosition="above">
-        <color-picker (selectColor)="grid[i] = $event"></color-picker>
-      </mat-menu>
-    </mat-grid-tile>
+  <mat-grid-list [cols]="cols">
+    <mat-grid-tile
+      *ngFor="let tile of grid; let i = index;"
+      [matMenuTriggerFor]="colorPicker"
+      (click)="selectedIndex = i"
+      [style.background]="tile"
+    ></mat-grid-tile>
   </mat-grid-list>
 </mat-card>
 
+<mat-menu #colorPicker="matMenu" yPosition="above">
+  <color-picker (selectColor)="grid[selectedIndex] = $event"></color-picker>
+</mat-menu>
