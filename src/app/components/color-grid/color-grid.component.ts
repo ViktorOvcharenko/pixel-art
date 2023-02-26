@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { IGridTile } from "../../models/grid-tile.model";
 import { ColorPalette } from "../../models/color-palette.enum";
+import {gridSizes} from "../../constants/grid-sizes";
 
 @Component({
   selector: 'color-grid',
@@ -14,9 +14,5 @@ export class ColorGridComponent {
     this.grid = Array.from(Array(size * size).keys()).map(() => ColorPalette.Default);
   }
   public grid: ColorPalette[] = [];
-  public cols: number = 8;
-
-  public selectColor(color: ColorPalette, index: number): void {
-    this.grid[index] = color;
-  }
+  public cols: number = gridSizes[0];
 }

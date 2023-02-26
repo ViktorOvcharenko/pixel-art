@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { gridSizes } from "../../constants/grid-sizes";
 
 @Component({
   selector: 'toolbar',
@@ -8,5 +9,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
 })
 export class ToolbarComponent {
   @Output() public selectGridSize = new EventEmitter<number>();
-  public gridSizes = [ 8, 12, 16, 32 ];
+  @Output() public downloadImage = new EventEmitter<void>();
+  public gridSizes = gridSizes;
 }

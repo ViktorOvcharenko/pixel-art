@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
-import {ColorPalette} from "../../models/color-palette.enum";
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { ColorPalette } from "../../models/color-palette.enum";
 
 @Component({
   selector: 'color-picker',
